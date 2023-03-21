@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className='container'>
         <div className='py-4'>{/*for margin i think*/}
-            <table className="table border shadow">
+            <table className="table table-primary table-hover border shadow">
             <thead>
                 <tr>
                 <th scope="col">#</th>
@@ -60,13 +60,13 @@ export default function Home() {
                             <Link className="btn btn-success mx-2"
                             to={`/edituser/${user.id}`}
                             >
-                                Edit
+                                Update
                             </Link>
                             <button 
                                 className="btn btn-danger mx-2"
                                 onClick={() => deleteUser(user.id)}
                             >
-                                Delete
+                                Remove
                             </button>
                         </td>
                     </tr>

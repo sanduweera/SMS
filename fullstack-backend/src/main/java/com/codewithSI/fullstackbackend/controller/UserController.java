@@ -22,7 +22,7 @@ public class UserController {
     private UserRepository userRepository;
 
     @PostMapping("/user")
-    User newUser(@RequestBody User newUser){
+    public User newUser(@RequestBody User newUser){
         logger.trace("New User Is Added");
         return userRepository.save(newUser);
     }
