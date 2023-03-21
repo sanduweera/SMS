@@ -3,7 +3,9 @@ package com.codewithSI.fullstackbackend;
 import com.codewithSI.fullstackbackend.model.User;
 import org.junit.jupiter.api.Test;
 
+import static net.bytebuddy.matcher.ElementMatchers.any;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
 
 public class UserTest {
     @Test
@@ -53,8 +55,25 @@ public class UserTest {
         User user = new User();
         user.setId(1L);
         assertEquals(1L, user.getId().longValue());
-}
+    }
 
+    @Test
+    public void testNewUser() {
+        User user = new User();
+        user.setRegno("12345");
+        user.setFirstname("John");
+        user.setLastname("Doe");
+        user.setStudentmail("john.doe@example.com");
+
+        when(userRepository.save(any(User.class))).thenReturn(user);
+
+        User savedUser = userController.newUser(user);
+
+        assertEquals(user.getRegno(), savedUser.getRegno());
+        assertEquals(user.getFirstname(), savedUser.getFirstname());
+        assertEquals(user.getLastname(), savedUser.getLastname());
+        assertEquals(user.getStudentmail(), savedUser.getStudentmail());
+    }
 
 }
 
