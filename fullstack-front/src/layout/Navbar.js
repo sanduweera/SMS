@@ -9,6 +9,8 @@ export default function Navbar() {
         <div className="container-fluid">
             <Link className="navbar-brand" to="/">
                 <img src={img1} mx-2 width="35" height="30"/>
+            </Link>
+            <Link className="navbar-brand mx-auto" to="/">
                 Student Management System
             </Link>
             <button 
@@ -21,10 +23,6 @@ export default function Navbar() {
                 aria-label="Toggle navigation">
             <span className ="navbar-toggler-icon"></span>
             </button>
-            
-            {/* <Link className="btn btn-outline-light" to="/adduser">
-                Add User
-            </Link> */}
         </div>
         </nav>
     </div>

@@ -76,6 +76,7 @@ export default function Home() {
                 
             </tbody>
             </table>
+            <Link type="button" class="btn btn-primary" to="/adduser">AddUser</Link>
         </div>
     </div>
   )
